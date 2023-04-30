@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Fractal</string>
+    <string name="tip1_name">Dia 1 - Início</string>
+    <string name="tip1_description">Encontre a sua paz interior e a fortaleça.</string>
+    <string name="tip2_name">Day 2 - Saúde</string>
+    <string name="tip2_description">Tenha uma rotina saudável. Coma comidas saudaveis e pratique exercícios.</string>
+    <string name="tip3_name">Day 3 - Espaço Mental</string>
+    <string name="tip3_description">Fortaleça sua imaginação. Criatividade é importante!</string>
+</resources>
