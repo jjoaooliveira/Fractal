@@ -22,8 +22,12 @@ val Typography = Typography(
     defaultFontFamily = cabin,
     h1 = TextStyle(
         fontWeight = FontWeight.Bold,
-        fontSize = 20.sp,
+        fontSize = 30.sp,
         lineBreak = LineBreak.Heading
+    ),
+    h2 = TextStyle(
+        fontWeight = FontWeight.Bold,
+        fontSize = 20.sp
     ),
     body1 = TextStyle(
         fontWeight = FontWeight.Normal,
