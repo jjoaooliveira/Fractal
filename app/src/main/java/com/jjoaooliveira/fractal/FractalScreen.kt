@@ -6,6 +6,7 @@ import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -34,6 +35,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -74,30 +76,31 @@ fun TipCard(
                .animateContentSize(
                    animationSpec = spring(
                        dampingRatio = Spring.DampingRatioLowBouncy)),
-           verticalArrangement = Arrangement.spacedBy(10.dp)
+           verticalArrangement = Arrangement.spacedBy(5.dp)
        ) {
-           TipHead(tip.tipName)
-
            Row(
                modifier = Modifier.fillMaxWidth(),
-               horizontalArrangement = Arrangement.Center
+               horizontalArrangement = Arrangement.SpaceBetween
            ) {
-               TipImage(tip.tipImage)
-           }
-
-           if(expanded) {
-               Spacer(modifier = Modifier.height(10.dp))
-               TipDesc(tip.tipDescription)
-           }
-           Row(
-               modifier = Modifier.fillMaxWidth(),
-               horizontalArrangement = Arrangement.End
-           ) {
+               TipHead(tip.tipName)
                TipButton(
                    expanded = expanded,
                    onClick = { expanded = !expanded }
                )
            }
+           Row(
+               modifier = Modifier.fillMaxWidth(),
+               horizontalArrangement = Arrangement.Center,
+           ) {
+               TipImage(tip.tipImage)
+           }
+
+           if(expanded) {
+               Spacer(modifier = Modifier.height(20.dp))
+               TipDesc(tip.tipDescription)
+               Spacer(modifier = Modifier.height(10.dp))
+           }
+
        }
    }
 }
@@ -125,7 +128,7 @@ fun TipButton(
         Icon(
             imageVector = if(expanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
             contentDescription = null,
-            tint = MaterialTheme.colors.onSurface
+            tint = MaterialTheme.colors.secondary
         )
     }
 }

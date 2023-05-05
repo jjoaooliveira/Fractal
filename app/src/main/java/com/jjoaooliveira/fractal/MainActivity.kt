@@ -29,7 +29,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             FractalTheme {
-                // A surface container using the 'background' color from the theme
                  FractalApp()
             }
         }
@@ -38,14 +37,12 @@ class MainActivity : ComponentActivity() {
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun FractalApp(modifier: Modifier = Modifier) {
+fun FractalApp() {
     Scaffold(
         topBar = { MainTopBar() },
     ) {
-        Column(
-            //modifier.background(MaterialTheme.colors.background)
-        ) {
-            Spacer(modifier = Modifier.height(200.dp)) //ajustar no final
+        Column {
+            Spacer(modifier = Modifier.height(180.dp))
             TipList()
         }
     }
@@ -66,10 +63,10 @@ fun MainTopBar(modifier: Modifier = Modifier) {
 }
 
 
-@Preview(showSystemUi = true)
+@Preview
 @Composable
 fun FractalPreview() {
-    FractalTheme {
+    FractalTheme(darkTheme = false) {
        FractalApp()
     }
 }
